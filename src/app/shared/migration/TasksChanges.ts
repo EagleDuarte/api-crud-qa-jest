@@ -1,7 +1,7 @@
 import { MigrationInterface, QueryRunner } from "typeorm";
 
-export class AlteraçãoTasks1669171370519 implements MigrationInterface {
-  name = "AlteraçãoTasks1669171370519";
+export class TasksChanges implements MigrationInterface {
+  name = "TasksChanges";
 
   public async up(queryRunner: QueryRunner): Promise<void> {
     await queryRunner.query(
