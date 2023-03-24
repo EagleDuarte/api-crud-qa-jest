@@ -18,7 +18,7 @@ export class UserController {
         new CacheRepository()
       );
       const result = await usecase.execute();
-      return success(res, result, "User successfully listed");
+      return success(res, result, "User successfully listed.");
     } catch (error: any) {
       return serverError(res, error);
     }
@@ -164,3 +164,13 @@ export class UserController {
     }
   }
 }
+
+/* Este código é referente a um controlador (Controller) para usuários em uma aplicação. Ele contém quatro métodos que são executados de acordo com as rotas definidas na API:
+
+list: lista todos os usuários cadastrados na aplicação.
+get: obtém os dados de um usuário específico com base em um ID fornecido.
+create: cria um novo usuário com base nos dados fornecidos na solicitação.
+login: verifica se um usuário com as credenciais fornecidas existe no banco de dados e retorna um token de acesso.
+Cada método utiliza um caso de uso (Use Case) diferente para executar a lógica de negócios necessária. Esses casos de uso recebem dois repositórios (Repository) como parâmetros
+: um para acessar os dados do usuário e outro para acessar um cache da aplicação. O cache é utilizado para melhorar a performance da aplicação e reduzir o número de consultas
+ ao banco de dados. O código também retorna uma resposta HTTP para a solicitação recebida pelo servidor. */

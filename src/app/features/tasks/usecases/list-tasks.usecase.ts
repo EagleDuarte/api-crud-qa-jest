@@ -22,3 +22,10 @@ export class ListTasksUseCase {
     return resultJson;
   }
 }
+
+/* Este código exporta uma classe chamada ListTasksUseCase, que é responsável por listar todas as tarefas existentes. O construtor recebe dois parâmetros: um repositório de
+tarefas e um repositório de cache.
+A função execute é assíncrona e não recebe nenhum parâmetro. A primeira coisa que ela faz é verificar se a lista de tarefas já está armazenada em cache. Se estiver, 
+ela retorna o resultado armazenado em cache.
+Se a lista de tarefas não estiver em cache, a função obtém a lista de tarefas a partir do repositório de tarefas e converte cada item em JSON. Em seguida, ela armazena a 
+lista em cache e retorna o resultado. */

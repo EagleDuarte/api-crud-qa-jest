@@ -115,3 +115,15 @@ export class TasksRepository {
     return await this._repository.delete({ id });
   }
 }
+
+/* Este é um trecho de código TypeScript que implementa um repositório para a entidade "tarefas". O código define uma classe chamada TasksRepository que possui métodos para criar, listar, atualizar e excluir tarefas.
+
+A interface UpdateTasksDTO é utilizada para receber os dados que serão utilizados para atualizar uma tarefa, e inclui opções para atualizar a descrição, detalhes, se a tarefa foi arquivada e o usuário responsável.
+
+Os métodos incluem:
+
+list(): busca todas as tarefas do banco de dados e retorna uma lista de objetos Tasks, com suas respectivas informações.
+get(id: string): busca uma única tarefa com base em seu ID e retorna um objeto Tasks.
+create(tasks: Tasks): cria uma nova tarefa no banco de dados com base em um objeto Tasks e retorna a tarefa criada.
+update(data: UpdateTasksDTO): atualiza uma tarefa existente com base nos dados fornecidos na interface UpdateTasksDTO e retorna a tarefa atualizada.
+delete(id: string): exclui uma tarefa com base em seu ID. */

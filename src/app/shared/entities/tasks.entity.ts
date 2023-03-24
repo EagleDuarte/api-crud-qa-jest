@@ -63,3 +63,8 @@ export class TasksEntity {
   })
   updatedAt!: Date;
 }
+
+/* Este código define uma entidade de tarefa (TasksEntity) para um banco de dados usando TypeORM, que é um ORM (Object-Relational Mapping) para TypeScript e JavaScript.
+A entidade possui os seguintes campos: id (um identificador gerado automaticamente), descrição, detalhe, arquivada (uma flag booleana), usuário (um relacionamento
+muitos-para-um com a entidade UserEntity) e created_at e updated_at (datas de criação e atualização da tarefa, respectivamente). O código também define o nome da tabela no
+banco de dados ("tasks").  */

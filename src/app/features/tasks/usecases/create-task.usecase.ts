@@ -27,3 +27,11 @@ export class CreateTaskUseCase {
     return result.toJson();
   }
 }
+
+/* Esse código define uma classe chamada CreateTaskUseCase que implementa a lógica de negócios para a criação de uma nova tarefa no sistema. Ele espera dois argumentos em seu
+construtor: um repositório para manipular as tarefas no banco de dados e um repositório de cache para armazenar temporariamente as informações da tarefa.
+O execute método cria uma nova instância de Tasks a partir dos dados fornecidos na interface CreateTaskDTO. Em seguida, ele chama o método create do repositório de tarefas,
+que salva a tarefa no banco de dados e retorna um objeto Tasks.
+O método também atualiza o cache, armazenando a nova tarefa com a chave task-${result.id}. Em seguida, ele deleta os caches relacionados às tarefas e usuários para que as 
+informações possam ser atualizadas no próximo acesso. 
+Finalmente, ele retorna um objeto JSON que representa a nova tarefa criada. */

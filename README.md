@@ -53,8 +53,5 @@
 - typeorm: framework ORM (Object-Relational Mapping) para Node.js e TypeScript
 - uuid: biblioteca para gerar IDs únicos
 
-# Comando para rodar api:
+# Comando para rodar API:
 - npm run dev
-
-# Recolocar no script package.json:
-- "start": "json-server --watch ./src/data/db.json --port 3333",

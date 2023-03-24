@@ -55,3 +55,9 @@ export class Tasks {
     return tasks;
   }
 }
+
+/* O código define uma classe chamada Tasks, que representa uma tarefa a ser realizada por um usuário. A classe possui propriedades como descrição, detalhes, 
+um usuário atribuído à tarefa e um status de arquivo (opcional), bem como um identificador exclusivo gerado automaticamente.
+A classe também possui métodos getter para acessar as propriedades privadas e um método toJson que retorna um objeto literal contendo as propriedades da instância da classe
+em formato JSON.
+Além disso, a classe possui um método estático create que retorna uma nova instância da classe Tasks com um ID específico definido. */

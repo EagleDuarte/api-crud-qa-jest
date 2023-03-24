@@ -18,3 +18,9 @@ export class DeleteTaskUseCase {
     return;
   }
 }
+
+/* Este código define uma classe chamada DeleteTaskUseCase, que é responsável por deletar uma tarefa do banco de dados. Ele recebe como parâmetros um objeto TasksRepository e um objeto CacheRepository na sua criação. A classe possui um método chamado execute que recebe o ID da tarefa a ser deletada e executa as seguintes ações:
+
+Chama o método delete do objeto TasksRepository para deletar a tarefa com o ID fornecido.
+Chama o método delete do objeto CacheRepository para deletar do cache a tarefa com a chave task-${id}, bem como as chaves "tasks" e "user".
+Retorna undefined. */

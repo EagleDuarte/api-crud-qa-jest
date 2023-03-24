@@ -87,7 +87,7 @@ export class TasksController {
       if (!userResult) {
         return res.status(404).send({
           ok: false,
-          message: "User não existe",
+          message: "User doesn't exists.",
         });
       }
 
@@ -150,7 +150,7 @@ export class TasksController {
 
       return res.status(200).send({
         ok: true,
-        message: "Task atualizado com sucesso",
+        message: "Task updated sucessfully.",
         data: resultUpdate,
       });
     } catch (error: any) {
@@ -208,7 +208,7 @@ export class TasksController {
       if (!result) {
         return res.status(404).send({
           ok: false,
-          message: "Tasks não encontrada!",
+          message: "Tasks not found.",
         });
       }
 
@@ -217,10 +217,15 @@ export class TasksController {
 
       return res.status(200).send({
         ok: true,
-        message: "Task successfully deleted",
+        message: "Task successfully deleted.",
       });
     } catch (error: any) {
       return serverError(res, error);
     }
   }
 }
+
+/* O código acima define a classe TasksController que tem métodos para lidar com requisições HTTP relacionadas a tarefas, incluindo listar, obter, criar, atualizar e excluir
+ tarefas. Cada método chama um caso de uso específico (classe que implementa a lógica de negócio) que é passado para os construtores dos objetos. Os casos de uso utilizam os
+  repositórios de tarefas e cache. Se ocorrer algum erro, é retornado um erro interno do servidor. Além disso, alguns erros específicos também são tratados, como parâmetros
+   faltando ou tarefas que não existem. O método arquivar está comentado, indicando que não está sendo usado no momento. */

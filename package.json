@@ -4,7 +4,7 @@
   "description": "api-tasks-jest-redis",
   "main": "index.js",
   "scripts": {
-    "start": "node ./dist/index.js",
+    "start": "json-server --watch ./src/data/db.json --port 3000",
     "dev": "ts-node-dev --respawn --transpile-only ./src/index.ts",
     "dev:debug": "ts-node-dev --inspect --respawn --transpile-only ./src/index.ts",
     "build": "tsc",

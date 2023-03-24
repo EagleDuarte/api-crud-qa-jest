@@ -85,3 +85,18 @@ export class UserRepository {
   //   return await this._repository.save(userEntity);
   // }
 }
+
+/* Este é um código TypeScript que define uma classe chamada UserRepository que implementa as operações CRUD (create, read, update e delete) em um banco de dados
+para a entidade User.
+O repositório utiliza o ORM TypeORM para se comunicar com o banco de dados e, em particular, com a entidade UserEntity.
+
+As funções públicas da classe são:
+
+list(): recupera uma lista de todos os usuários do banco de dados, incluindo suas tarefas relacionadas.
+get(name: string): recupera um usuário pelo nome, incluindo suas tarefas relacionadas.
+getId(id: string): recupera um usuário pelo ID, incluindo suas tarefas relacionadas.
+create(user: User): cria um novo usuário no banco de dados a partir do objeto User fornecido.
+update(userEntity: UserEntity, data: UpdateUserDTO): atualiza os dados de um usuário no banco de dados com base no objeto UpdateUserDTO fornecido.
+No entanto, a função update() está comentada e, portanto, não está sendo usada.
+
+Há também uma função privada mapEntityToModel() que converte um objeto UserEntity recuperado do banco de dados em um objeto User do modelo de negócios. */

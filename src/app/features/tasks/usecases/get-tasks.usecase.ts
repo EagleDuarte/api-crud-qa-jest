@@ -25,3 +25,8 @@ export class GetTasksUseCase {
     return taskJson;
   }
 }
+
+/* Este código define a classe GetTasksUseCase, que é responsável por obter uma tarefa específica a partir do seu ID. Ele recebe como argumentos um objeto TasksRepository,
+ que lida com a persistência dos dados de tarefas, e um objeto CacheRepository, que lida com o cache desses dados.
+O método execute recebe um ID de tarefa como argumento e verifica se a tarefa já está em cache. Se sim, ele retorna a tarefa armazenada em cache. Caso contrário, 
+ele obtém a tarefa a partir do repositório, verifica se ela existe, a converte para o formato JSON e a armazena em cache antes de retorná-la. */
