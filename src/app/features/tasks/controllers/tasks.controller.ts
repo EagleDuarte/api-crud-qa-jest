@@ -19,7 +19,7 @@ export class TasksController {
         new CacheRepository()
       );
       const result = await usecase.execute();
-      return success(res, result, "Tasks successfull listed");
+      return success(res, result, "Tasks successfull listed.");
     } catch (error: any) {
       return serverError(res, error);
     }
@@ -144,7 +144,7 @@ export class TasksController {
       if (resultUpdate === null) {
         return res.status(404).send({
           ok: false,
-          message: "Growdever not found",
+          message: "Growdever not found.",
         });
       }
 
@@ -226,6 +226,6 @@ export class TasksController {
 }
 
 /* O código acima define a classe TasksController que tem métodos para lidar com requisições HTTP relacionadas a tarefas, incluindo listar, obter, criar, atualizar e excluir
- tarefas. Cada método chama um caso de uso específico (classe que implementa a lógica de negócio) que é passado para os construtores dos objetos. Os casos de uso utilizam os
-  repositórios de tarefas e cache. Se ocorrer algum erro, é retornado um erro interno do servidor. Além disso, alguns erros específicos também são tratados, como parâmetros
-   faltando ou tarefas que não existem. O método arquivar está comentado, indicando que não está sendo usado no momento. */
+tarefas. Cada método chama um caso de uso específico (classe que implementa a lógica de negócio) que é passado para os construtores dos objetos. Os casos de uso utilizam os
+repositórios de tarefas e cache. Se ocorrer algum erro, é retornado um erro interno do servidor. Além disso, alguns erros específicos também são tratados, como parâmetros
+faltando ou tarefas que não existem. O método arquivar está comentado, indicando que não está sendo usado no momento. */

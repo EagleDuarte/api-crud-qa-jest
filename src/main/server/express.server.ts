@@ -5,6 +5,6 @@ export const runServer = () => {
     const app = createServer();
 
     app.listen(appEnv.port, () => {
-        console.log("API rodando na porta " + process.env.PORT);
+        console.log("API running at port: " + process.env.PORT);
     });
 };

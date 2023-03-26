@@ -13,3 +13,7 @@ export const createServer = () => {
 
   return app;
 };
+
+/* Este código define uma função chamada createServer que cria e configura um servidor Express. A função cria uma instância do Express e adiciona middlewares para permitir
+ a análise de JSON e o uso de cors. Em seguida, ele adiciona rotas definidas nos módulos de roteamento de tarefas e usuários aos caminhos "/tasks" e "/user", respectivamente.
+  Por fim, ele retorna a instância do Express configurada. */

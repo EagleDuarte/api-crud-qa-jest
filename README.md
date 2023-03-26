@@ -1,7 +1,7 @@
-# Api de TASKS utilizando testes. 
-- Banco de Dados III e Arquitetura de Software. 
+# API - CRUD + integracao de testes. 
+- 8ª Edição Programa Starter: Banco de Dados III e Arquitetura de Software. 
 
-# Comandos executados neste projeto:
+# Comandos e dependências executados neste projeto:
 
 - migration:generate: gera um novo arquivo de migração de banco de dados
 - migration:run: executa as migrações de banco de dados
