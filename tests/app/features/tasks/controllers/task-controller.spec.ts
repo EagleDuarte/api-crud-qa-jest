@@ -63,8 +63,8 @@ describe("Task controller tests", () => {
 
     const user = {
       id: "any-id-user",
-      name: "dev@teste.com",
-      pass: "dev123",
+      name: "user@test.com",
+      pass: "user123",
     };
 
     const taskDTO = {
@@ -97,8 +97,8 @@ describe("Task controller tests", () => {
     const app = makeSut();
 
     const user = {
-      name: "dev@teste.com",
-      pass: "dev123",
+      name: "user@test.com",
+      pass: "user123",
     };
 
     const taskDTO = {
@@ -130,8 +130,8 @@ describe("Task controller tests", () => {
     const app = makeSut();
 
     const user = {
-      name: "dev@teste.com",
-      pass: "dev123",
+      name: "user@test.com",
+      pass: "user123",
     };
 
     const taskDTO = {
@@ -163,8 +163,8 @@ describe("Task controller tests", () => {
     const app = makeSut();
 
     const user = {
-      name: "dev@teste.com",
-      pass: "dev123",
+      name: "user@test.com",
+      pass: "user123",
     };
 
     const taskDTO = {
@@ -193,8 +193,8 @@ describe("Task controller tests", () => {
     const app = makeSut();
 
     // const user = {
-    //   name: "dev@teste.com",
-    //   pass: "dev123",
+    //   name: "user@test.com",
+    //   pass: "user123",
     // };
 
     // jest
@@ -228,8 +228,8 @@ describe("Task controller tests", () => {
 
     const user = {
       id: "any-id-user",
-      name: "dev@teste.com",
-      pass: "dev123",
+      name: "user@test.com",
+      pass: "user123",
     };
 
     const taskDTO = {
@@ -257,8 +257,8 @@ describe("Task controller tests", () => {
 
     const user = {
       id: "any-id-user",
-      name: "dev@teste.com",
-      pass: "dev123",
+      name: "user@test.com",
+      pass: "user123",
     };
 
     const taskDTO = {

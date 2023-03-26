@@ -28,12 +28,12 @@ describe("Get task usecase teste", () => {
     return sut;
   };
 
-  test("deve retornar uma task valido se o id existir", async () => {
+  test("Shall return a valid task when the user id exists.", async () => {
     const sut = makeSut();
 
     const userDTO = {
-      name: "dev@teste.com",
-      pass: "dev123",
+      name: "user@test.com",
+      pass: "user123",
     };
 
     const user = new User(userDTO.name, userDTO.pass);
@@ -55,22 +55,22 @@ describe("Get task usecase teste", () => {
     expect(result.id).toBe(task.id);
   });
 
-  test("deve retornar null quando não existir task", async () => {
+  test("Shall return a null status when the tasks does not exists.", async () => {
     const sut = makeSut();
 
     jest.spyOn(CacheRepository.prototype, "get").mockResolvedValue(null);
     jest.spyOn(TasksRepository.prototype, "get").mockResolvedValue(null);
 
-    const result = await sut.execute("fbc2572a-c0d2-4580-a54a-ab5b860f2695");
+    const result = await sut.execute("");
     expect(result).toBeNull();
   });
 
-  test("deve retornar uma task caso esteja em cache", async () => {
+  test("Shall return a task if it is on database.", async () => {
     const sut = makeSut();
 
     const userDTO = {
-      name: "dev@teste.com",
-      pass: "dev123",
+      name: "user@test.com",
+      pass: "user123",
     };
 
     const user = new User(userDTO.name, userDTO.pass);

@@ -30,8 +30,8 @@ describe("Login user usecase test", () => {
     const sut = makeSut();
 
     const userDTO = {
-      name: "dev@teste.com",
-      pass: "dev123",
+      name: "user@test.com",
+      pass: "user123",
     };
     const user = new User(userDTO.name, userDTO.pass);
     jest.spyOn(UserRepository.prototype, "get").mockResolvedValue(user);
@@ -53,13 +53,13 @@ describe("Login user usecase test", () => {
     jest.spyOn(CacheRepository.prototype, "get").mockResolvedValue(null);
     jest.spyOn(UserRepository.prototype, "get").mockResolvedValue(null);
 
-    const result = await sut.execute("fbc2572a-c0d2-4580-a54a-ab5b860f2695");
+    const result = await sut.execute("");
     expect(result).toBeNull();
   });
 
   test("Shall return a user if he exists on cache.", async () => {
     const sut = makeSut();
-    const user = new User("dev@teste.com", "dev123");
+    const user = new User("user@test.com", "user123");
     jest
       .spyOn(CacheRepository.prototype, "get")
       .mockResolvedValue(user.toJson());

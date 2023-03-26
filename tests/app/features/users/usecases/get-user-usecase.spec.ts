@@ -47,7 +47,7 @@ describe("Get user usecase teste", () => {
     jest.spyOn(CacheRepository.prototype, "get").mockResolvedValue(null);
     jest.spyOn(UserRepository.prototype, "get").mockResolvedValue(null);
 
-    const result = await sut.execute("fbc2572a-c0d2-4580-a54a-ab5b860f2695");
+    const result = await sut.execute("");
     expect(result).toBeNull();
   });
 

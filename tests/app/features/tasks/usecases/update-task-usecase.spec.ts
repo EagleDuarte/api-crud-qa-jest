@@ -31,21 +31,20 @@ describe("Update task usecase tests", () => {
     return sut;
   };
 
-  //*!NÃO PASSOU
-  test.skip("deve retornar os dados de uma nova task quando alterada com sucesso", async () => {
+  test.skip("Shall return data when a new task we're updated sucessfully.", async () => {
     const sut = makeSut();
 
     const userDTO = {
-      name: "dev@teste.com",
-      pass: "dev123",
+      name: "user@test.com",
+      pass: "user123",
     };
 
     const user = new User(userDTO.name, userDTO.pass);
 
     const taskDTO = {
-      id: "fbc2572a-c0d2-4580-a54a-ab5b860f2695",
-      description: "novo teste",
-      detail: "novo teste",
+      id: "",
+      description: "testing description ...",
+      detail: "testing detail ...",
       arquivada: false,
       user: user,
     };

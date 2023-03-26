@@ -34,8 +34,8 @@ describe("Create user usecase tests", () => {
     const sut = makeSut();
 
     const user = {
-      name: "dev@teste.com",
-      pass: "dev123",
+      name: "user@test.com",
+      pass: "user123",
     };
 
     jest

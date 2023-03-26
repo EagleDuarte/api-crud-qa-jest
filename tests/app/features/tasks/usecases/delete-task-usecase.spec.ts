@@ -28,12 +28,11 @@ describe("Delete task usecase teste", () => {
     return sut;
   };
 
-  //*!NÃO PASSOU
-  test.skip("deve retornar uma task valido se o id existir", async () => {
+  test.skip("Shall return a valid task if the id exists.", async () => {
     const sut = makeSut();
     const userDTO = {
-      name: "dev@teste.com",
-      pass: "dev123",
+      name: "user@test.com",
+      pass: "user123",
     };
 
     const user = new User(userDTO.name, userDTO.pass);

@@ -24,7 +24,7 @@ describe("Get user by id - integration controller test", () => {
   });
 
   const createUser = async () => {
-    const user = new User("dev@teste.com", "dev123");
+    const user = new User("user@test.com", "user123");
 
     const userRepository = new UserRepository();
     await userRepository.create(user);
@@ -32,7 +32,7 @@ describe("Get user by id - integration controller test", () => {
     return user;
   };
 
-  test("deve retornar 200 se existir lista de usuários", async () => {
+  test("Shall return a 200 status if it is registered on the user list.", async () => {
     const app = makeSut();
     const user = await createUser();
     const result = await request(app).get("/user/").send();
@@ -42,7 +42,7 @@ describe("Get user by id - integration controller test", () => {
     expect(result).toHaveProperty("body.ok", true);
   });
 
-  test("deve retornar 200 se o usuário existir", async () => {
+  test("Shall return a 200 status if the user doens't exists.", async () => {
     const app = makeSut();
     const user = await createUser();
     const result = await request(app)
@@ -54,7 +54,7 @@ describe("Get user by id - integration controller test", () => {
     expect(result).toHaveProperty("body.ok", true);
   });
 
-  test("deve retornar 404 se o usuário não existir id", async () => {
+  test("Shall return a 404 status if the user if doesn't exists.", async () => {
     const app = makeSut();
     const result = await request(app).get("/user/abc").send();
 
@@ -63,11 +63,11 @@ describe("Get user by id - integration controller test", () => {
     expect(result).toHaveProperty("body.ok", false);
   });
 
-  test("deve retornar 201 quando criar um usuário", async () => {
+  test("Shall reteurn a 201 status when the user we're created.", async () => {
     const app = makeSut();
     const user = {
-      name: "dev@teste.com",
-      pass: "dev123",
+      name: "user@test.com",
+      pass: "user123",
     };
     const result = await request(app).post("/user/").send(user);
 
@@ -76,11 +76,11 @@ describe("Get user by id - integration controller test", () => {
     expect(result).toHaveProperty("body.ok", true);
   });
 
-  test("deve retornar 400 se não passar name ao criar usuário", async () => {
+  test("Shall return a 400 status if the name we're not provided when creating the user.", async () => {
     const app = makeSut();
     const user = {
       name: "",
-      pass: "dev123",
+      pass: "user123",
     };
     const result = await request(app).post("/user/").send(user);
 
@@ -89,10 +89,10 @@ describe("Get user by id - integration controller test", () => {
     expect(result).toHaveProperty("body.ok", false);
   });
 
-  test("deve retornar 400 se não passar pass ao criar usuário", async () => {
+  test("Shall return a 400 status if the password we're not provided when creating the user.", async () => {
     const app = makeSut();
     const user = {
-      name: "dev@teste.com",
+      name: "user@test.com",
       pass: "",
     };
     const result = await request(app).post("/user/").send(user);
@@ -102,11 +102,11 @@ describe("Get user by id - integration controller test", () => {
     expect(result).toHaveProperty("body.ok", false);
   });
 
-  test("deve retornar 201 quando o usuário logar", async () => {
+  test("Shall return a 201 status when the user log.", async () => {
     const app = makeSut();
     const user = {
-      name: "dev@teste.com",
-      pass: "dev123",
+      name: "user@test.com",
+      pass: "user123",
     };
     const result = await request(app).post("/user/login").send(user);
 
@@ -115,11 +115,11 @@ describe("Get user by id - integration controller test", () => {
     expect(result).toHaveProperty("body.ok", true);
   });
 
-  test("deve retornar 400 se não passar name ao logar", async () => {
+  test("Shall return a 400 status if the name doens't log.", async () => {
     const app = makeSut();
     const user = {
       name: "",
-      pass: "dev123",
+      pass: "user123",
     };
     const result = await request(app).post("/user/login").send(user);
 
@@ -128,10 +128,10 @@ describe("Get user by id - integration controller test", () => {
     expect(result).toHaveProperty("body.ok", false);
   });
 
-  test("deve retornar 400 se não passar pass ao logar", async () => {
+  test("Shall return a 400 status if the password doesn't log.", async () => {
     const app = makeSut();
     const user = {
-      name: "dev@teste.com",
+      name: "user@test.com",
       pass: "",
     };
     const result = await request(app).post("/user/login").send(user);

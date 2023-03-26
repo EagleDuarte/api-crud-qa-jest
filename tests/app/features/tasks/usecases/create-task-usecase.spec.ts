@@ -36,8 +36,8 @@ describe("Create task usecase tests", () => {
 
     const userDTO = {
       id: "any-id",
-      name: "dev@teste.com",
-      pass: "dev123",
+      name: "user@test.com",
+      pass: "user123",
     };
 
     const user = User.create(userDTO.id, userDTO.name, userDTO.pass);

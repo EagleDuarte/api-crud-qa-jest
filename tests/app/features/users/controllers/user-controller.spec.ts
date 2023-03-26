@@ -16,7 +16,7 @@ describe("User controller tests", () => {
     return sut;
   };
 
-  test("deve retornar HTTP 200 quando o listar users", async () => {
+  test("Shall return a HTTP 200 when listing users.", async () => {
     const app = makeSut();
     const result = await request(app).get("/user").send();
 
@@ -27,7 +27,7 @@ describe("User controller tests", () => {
     expect(result.body).toHaveProperty("data");
   });
 
-  test("deve retornar HTTP 200 quando existir user", async () => {
+  test("Shall return a HTTP 200 when the user exists.", async () => {
     const app = makeSut();
 
     const result = await request(app)
@@ -41,7 +41,7 @@ describe("User controller tests", () => {
     expect(result.body).toHaveProperty("data");
   });
 
-  test("deve retornar HTTP 400 quando não existir user", async () => {
+  test("Shall return a HTTP 400 when the user does not exists.", async () => {
     const app = makeSut();
 
     const result = await request(app)
@@ -54,12 +54,12 @@ describe("User controller tests", () => {
     expect(result.body).toHaveProperty("message", "O User não existe");
   });
 
-  test("deve retornar HTTP 201 quando o user for criado com sucesso", async () => {
+  test("Shall return a HTTP 201 status when the user we're created sucessfully.", async () => {
     const app = makeSut();
 
     const user = {
-      name: "dev@teste.com",
-      pass: "dev123",
+      name: "user@test.com",
+      pass: "user123",
     };
 
     jest
@@ -75,11 +75,11 @@ describe("User controller tests", () => {
     expect(result.body).toHaveProperty("data");
   });
 
-  test("deve retornar HTTP 400 quando criar user sem name", async () => {
+  test("Shall return a HTTP 400 status when users are created without name.", async () => {
     const app = makeSut();
     const user = {
       name: "",
-      pass: "dev123",
+      pass: "user123",
     };
 
     jest
@@ -94,10 +94,10 @@ describe("User controller tests", () => {
     expect(result.body).toHaveProperty("message", "Name not provided");
   });
 
-  test("deve retornar HTTP 400 quando criar user sem pass", async () => {
+  test("Shall return a HTTP 400 status, when the user we're created without password.", async () => {
     const app = makeSut();
     const user = {
-      name: "dev@teste.com",
+      name: "user@test.com",
       pass: "",
     };
 
@@ -113,12 +113,12 @@ describe("User controller tests", () => {
     expect(result.body).toHaveProperty("message", "pass not provided");
   });
 
-  test("deve retornar HTTP 201 quando o user logar com sucesso", async () => {
+  test("Shall return a HTTP 201 status when the user log sucessfully.", async () => {
     const app = makeSut();
 
     const user = {
-      name: "dev@teste.com",
-      pass: "dev123",
+      name: "user@test.com",
+      pass: "user123",
     };
 
     jest
@@ -134,11 +134,11 @@ describe("User controller tests", () => {
     expect(result.body).toHaveProperty("data");
   });
 
-  test("deve retornar HTTP 400 quando logar user sem name", async () => {
+  test("Shall return a HTTP 400 when trying to log without a name.", async () => {
     const app = makeSut();
     const user = {
       name: "",
-      pass: "dev123",
+      pass: "user123",
     };
 
     jest
@@ -150,13 +150,13 @@ describe("User controller tests", () => {
     expect(result.status).toBe(400);
     expect(result.body).not.toBeNull();
     expect(result.body).toHaveProperty("ok", false);
-    expect(result.body).toHaveProperty("message", "Name or Pass not provided");
+    expect(result.body).toHaveProperty("message", "Name or password not provided.");
   });
 
-  test("deve retornar HTTP 400 quando logar user sem pass", async () => {
+  test("Shall return a HTTP 400 when the user log without a password.", async () => {
     const app = makeSut();
     const user = {
-      name: "dev@teste.com",
+      name: "user@test.com",
       pass: "",
     };
 
@@ -172,16 +172,16 @@ describe("User controller tests", () => {
     expect(result.body).toHaveProperty("message", "Name or pass not provided");
   });
 
-  test("deve retornar HTTP 501 quando o login usecase gerar excecao", async () => {
+  test("Shall return a HTTP 501 when the login usecase generate exceptions.", async () => {
     const app = makeSut();
 
     const user = {
-      name: "dev@teste.com",
-      pass: "dev123",
+      name: "user@test.com",
+      pass: "user123",
     };
 
     jest.spyOn(LoginUserUseCase.prototype, "execute").mockImplementation(() => {
-      throw new Error("Erro no teste unitario");
+      throw new Error("Error in the user test!");
     });
 
     const result = await request(app).post("/user/login").send(user);
@@ -191,7 +191,7 @@ describe("User controller tests", () => {
     expect(result.body).toHaveProperty("ok", false);
     expect(result.body).toHaveProperty(
       "message",
-      new Error("Erro no teste unitario").toString()
+      new Error("Error in the unity test!").toString()
     );
   });
 });

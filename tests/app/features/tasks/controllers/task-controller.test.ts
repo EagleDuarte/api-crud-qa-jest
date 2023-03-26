@@ -25,7 +25,7 @@ describe("Get task by id - integration controller test", () => {
   });
 
   const createTask = async () => {
-    const user = new User("dev@teste.com", "dev123");
+    const user = new User("user@test.com", "user123");
     const task = new Tasks("new test", "new test", user);
 
     const taskRepository = new TasksRepository();
@@ -34,7 +34,7 @@ describe("Get task by id - integration controller test", () => {
     return task;
   };
 
-  test.skip("deve retornar 200 se existir lista de tasks", async () => {
+  test.skip("Shall return a 200 status, if it exists in the task list.", async () => {
     const app = makeSut();
     const task = await createTask();
     const result = await request(app).get("/tasks/").send();
@@ -44,7 +44,7 @@ describe("Get task by id - integration controller test", () => {
     expect(result).toHaveProperty("body.ok", true);
   });
 
-  test.skip("deve retornar 200 se o task existir", async () => {
+  test.skip("Shall return a 200 status, when the task exists.", async () => {
     const app = makeSut();
     const task = await createTask();
     const result = await request(app)
@@ -56,7 +56,7 @@ describe("Get task by id - integration controller test", () => {
     expect(result).toHaveProperty("body.ok", true);
   });
 
-  test("deve retornar 404 se o task não existir id", async () => {
+  test("Shall return a 404 Shall return 404 if the task doens't exists. id", async () => {
     const app = makeSut();
     const result = await request(app).get("/tasks/abc").send();
 
@@ -67,7 +67,7 @@ describe("Get task by id - integration controller test", () => {
 
   test("Shall return a 404 when creating a task without a existing user.", async () => {
     const app = makeSut();
-    const user = new User("dev@teste.com", "dev123");
+    const user = new User("user@test.com", "user123");
     const result = await request(app).post("/tasks/").send({
       id: "any-id",
       description: "new test",
@@ -83,7 +83,7 @@ describe("Get task by id - integration controller test", () => {
 
   test("Shall return a 400 if the description wasn't provided when creating the task.", async () => {
     const app = makeSut();
-    const user = new User("dev@teste.com", "dev123");
+    const user = new User("user@test.com", "user123");
     const result = await request(app).post("/tasks/").send({
       id: "any-id",
       description: "",
@@ -98,7 +98,7 @@ describe("Get task by id - integration controller test", () => {
 
   test("Shall return a 400 when not the detail wasn't provided when creating the task.", async () => {
     const app = makeSut();
-    const user = new User("dev@teste.com", "dev123");
+    const user = new User("user@test.com", "user123");
     const result = await request(app).post("/tasks/").send({
       id: "any-id",
       description: "new test",
@@ -111,9 +111,9 @@ describe("Get task by id - integration controller test", () => {
     expect(result).toHaveProperty("body.ok", false);
   });
 
-  test("Shall return a 400 if the details wasn't provided when creating the task.", async () => {
+  test("Shall return a 400 if the detail we're not provided when creating the task.", async () => {
     const app = makeSut();
-    const user = new User("dev@teste.com", "dev123");
+    const user = new User("user@test.com", "user123");
     const result = await request(app).post("/tasks/").send({
       id: "any-id",
       description: "new test",
@@ -128,7 +128,7 @@ describe("Get task by id - integration controller test", () => {
 
   test("Shall return 404 if the task doens't exists.", async () => {
     const app = makeSut();
-    const user = new User("dev@teste.com", "dev123");
+    const user = new User("user@test.com", "user123");
     const task = new Tasks("new test", "new test", user);
     const result = await request(app)
       .delete("/tasks/" + task.id)
@@ -142,11 +142,11 @@ describe("Get task by id - integration controller test", () => {
 
 /* Este codigo é um conjunto de testes de integração para o controlador de tarefas. Antes de cada teste, a base de dados é limpa. O código testa a criação, recuperação e exclusão de tarefas. Os testes são:
 
-"deve retornar 200 se existir lista de tasks" - testa se a rota "/tasks/" retorna um código de status 200 e uma resposta com propriedade "ok" igual a true.
-"deve retornar 200 se o task existir" - testa se a rota "/tasks/:id" retorna um código de status 200 e uma resposta com propriedade "ok" igual a true.
-"deve retornar 404 se o task não existir id" - testa se a rota "/tasks/:id" retorna um código de status 404 e uma resposta com propriedade "ok" igual a false.
-"deve retornar 404 quando criar um task e não existir user" - testa se a rota "/tasks/" retorna um código de status 404 e uma resposta com propriedade "ok" igual a false e mensagem "User não existe" quando uma tarefa é criada sem um usuário existente.
-"deve retornar 400 se não passar description ao criar task" - testa se a rota "/tasks/" retorna um código de status 400 e uma resposta com propriedade "ok" igual a false quando uma tarefa é criada sem descrição.
-"deve retornar 400 se não passar detail ao criar task" - testa se a rota "/tasks/" retorna um código de status 400 e uma resposta com propriedade "ok" igual a false quando uma tarefa é criada sem detalhes.
-"deve retornar 400 se não passar detail ao criar task" - testa se a rota "/tasks/" retorna um código de status 400 e uma resposta com propriedade "ok" igual a false quando uma tarefa é criada sem um usuário.
-"deve retornar 404 se o task não existir" - testa se a rota "/tasks/:id" retorna um código de status 404 e uma resposta com propriedade "ok" igual a false quando uma tarefa é excluída e não existe na base de dados. */
+"Shall return a 200 status, if it exists in the task list." - testa se a rota "/tasks/" retorna um código de status 200 e uma resposta com propriedade "ok" igual a true.
+"Shall return a 200 status, when the task exists" - testa se a rota "/tasks/:id" retorna um código de status 200 e uma resposta com propriedade "ok" igual a true.
+"Shall return a 404 if the task doens't exists. id" - testa se a rota "/tasks/:id" retorna um código de status 404 e uma resposta com propriedade "ok" igual a false.
+"Shall return a 404 when creating a task without a existing user." - testa se a rota "/tasks/" retorna um código de status 404 e uma resposta com propriedade "ok" igual a false e mensagem "User não existe" quando uma tarefa é criada sem um usuário existente.
+"Shall return a 400 if the description wasn't provided when creating the task." - testa se a rota "/tasks/" retorna um código de status 400 e uma resposta com propriedade "ok" igual a false quando uma tarefa é criada sem descrição.
+"Shall return a 400 if the details we're not provided when creating the task." - testa se a rota "/tasks/" retorna um código de status 400 e uma resposta com propriedade "ok" igual a false quando uma tarefa é criada sem detalhes.
+"Shall return a 400 if the details we're not provided when creating the task." - testa se a rota "/tasks/" retorna um código de status 400 e uma resposta com propriedade "ok" igual a false quando uma tarefa é criada sem um usuário.
+"Shall return a 404 if the task doens't exists." - testa se a rota "/tasks/:id" retorna um código de status 404 e uma resposta com propriedade "ok" igual a false quando uma tarefa é excluída e não existe na base de dados. */
