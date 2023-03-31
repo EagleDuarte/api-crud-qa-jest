@@ -141,3 +141,24 @@ describe("Get user by id - integration controller test", () => {
     expect(result).toHaveProperty("body.ok", false);
   });
 });
+
+/* Este é um conjunto de testes de integração para um controlador que lida com requisições de usuário em um sistema. Os testes são executados usando o framework de teste Jest.
+
+O conjunto de testes inclui os seguintes testes:
+
+Testa se o controlador retorna um código de status 200 quando um usuário está registrado na lista de usuários.
+Testa se o controlador retorna um código de status 200 quando um usuário não existe.
+Testa se o controlador retorna um código de status 404 quando um usuário não existe.
+Testa se o controlador retorna um código de status 201 quando um usuário é criado.
+Testa se o controlador retorna um código de status 400 se o nome do usuário não for fornecido durante a criação.
+Testa se o controlador retorna um código de status 400 se a senha do usuário não for fornecida durante a criação.
+Testa se o controlador retorna um código de status 201 quando o usuário fizer login.
+Testa se o controlador retorna um código de status 400 se o nome do usuário não fizer login.
+Testa se o controlador retorna um código de status 400 se a senha do usuário não fizer login.
+O código começa inicializando e fechando a conexão com o banco de dados usando funções beforeAll e afterAll do Jest. Em seguida, define uma função de utilidade chamada makeSut, que cria uma instância do servidor.
+
+O beforeEach é usado para limpar o banco de dados antes de cada teste.
+
+Em seguida, há uma função de utilidade chamada createUser, que cria e salva um usuário no banco de dados usando um repositório de usuário.
+
+Os testes usam a biblioteca supertest para fazer solicitações HTTP ao servidor criado pela função makeSut. Cada teste envolve uma solicitação HTTP diferente para o servidor e testa o código de status da resposta e as propriedades da resposta retornada. */

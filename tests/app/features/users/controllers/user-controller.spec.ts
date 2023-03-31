@@ -51,7 +51,7 @@ describe("User controller tests", () => {
     expect(result.statusCode).toBe(404);
     expect(result.body).not.toBeNull();
     expect(result.body).toHaveProperty("ok", false);
-    expect(result.body).toHaveProperty("message", "O User não existe");
+    expect(result.body).toHaveProperty("message", "This user doens't exists.");
   });
 
   test("Shall return a HTTP 201 status when the user we're created sucessfully.", async () => {
@@ -195,3 +195,27 @@ describe("User controller tests", () => {
     );
   });
 });
+
+/* Este é um conjunto de testes para controlador de usuário em uma aplicação. Os testes são escritos usando a biblioteca Jest e Supertest. A função makeSut() cria uma instância do servidor e retorna.
+
+Os testes verificam as respostas HTTP e o corpo retornado do servidor para diferentes cenários de sucesso ou erro. A função beforeAll estabelece uma conexão com o banco de dados e a função afterAll fecha a conexão.
+
+Os testes incluem:
+
+"Shall return a HTTP 200 when listing users.": verifica se a rota /user retorna um status HTTP 200, um corpo não nulo, uma propriedade "ok" igual a true, uma propriedade "mensagem" igual a "Usuário listado com sucesso" e uma propriedade "data" contendo informações de usuário.
+
+"Shall return a HTTP 200 when the user exists.": verifica se a rota /user/:id retorna um status HTTP 200, um corpo não nulo, uma propriedade "ok" igual a true, uma propriedade "mensagem" igual a "Usuário obtido com sucesso" e uma propriedade "data" contendo informações de usuário.
+
+"Shall return a HTTP 400 when the user does not exist.": verifica se a rota /user/:id retorna um status HTTP 404, um corpo não nulo, uma propriedade "ok" igual a false, e uma propriedade "mensagem" igual a "O usuário não existe".
+
+"Shall return a HTTP 201 status when the user we're created successfully.": verifica se a rota /user com um corpo contendo informações do usuário retorna um status HTTP 201, um corpo não nulo, uma propriedade "ok" igual a true, uma propriedade "mensagem" igual a "Usuário criado com sucesso" e uma propriedade "data" contendo informações de usuário.
+
+"Shall return a HTTP 400 status when users are created without name.": verifica se a rota /user com um corpo contendo informações de usuário sem o nome retorna um status HTTP 400, um corpo não nulo, uma propriedade "ok" igual a false e uma propriedade "mensagem" igual a "Nome não fornecido".
+
+"Shall return a HTTP 400 status when the user we're created without password.": verifica se a rota /user com um corpo contendo informações de usuário sem a senha retorna um status HTTP 400, um corpo não nulo, uma propriedade "ok" igual a false e uma propriedade "mensagem" igual a "Senha não fornecida".
+
+"Shall return a HTTP 201 status when the user logs in successfully.": verifica se a rota /user/login com um corpo contendo informações de login retorna um status HTTP 201, um corpo não nulo, uma propriedade "ok" igual a true, uma propriedade "mensagem" igual a "Com sucesso" e uma propriedade "data" contendo informações de usuário.
+
+"Shall return a HTTP 400 when trying to log without a name.": verifica se a rota /user/login com um corpo contendo informações de login sem o nome retorna um status HTTP 400, um corpo não nulo, uma propriedade "ok" igual a false e uma propriedade "mensagem" igual a "Nome ou senha não fornecidos".
+
+"Shall return a HTTP 400 when the user logs in without a password.": verifica */

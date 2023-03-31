@@ -7,8 +7,8 @@
     },
     {
       "id": "2",
-      "name": "user2@teste.com",
-      "pass": "2222"
+      "name": "user@test.com",
+      "pass": "user123" 
     }
   ],
   "tasks": [

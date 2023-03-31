@@ -3,7 +3,7 @@ import { User } from "../../models/user";
 
 export const userList = [
   new User("user1@teste.com", "1111"),
-  new User("user2@teste.com", "2222"),
+  new User("user@test.com", "user123"),
   new User("user3@teste.com", "3333"),
 ];
 

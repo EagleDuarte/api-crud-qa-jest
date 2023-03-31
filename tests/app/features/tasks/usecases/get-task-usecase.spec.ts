@@ -94,3 +94,9 @@ describe("Get task usecase teste", () => {
     expect(result.id).toBe(task.id);
   });
 });
+
+/* Este é um conjunto de testes automatizados para a classe GetTasksUseCase.
+
+O objetivo desta classe é obter as tarefas do banco de dados ou do cache e retornar as tarefas para o usuário. O primeiro teste tem como objetivo verificar se é possível obter uma tarefa do banco de dados com base em um ID de tarefa válido e existente. O segundo teste é destinado a verificar se a função retorna um valor nulo quando o ID da tarefa não existe no banco de dados. O terceiro teste verifica se a função é capaz de obter uma tarefa do cache com base em um ID válido de tarefa existente.
+Para a execução dos testes, são utilizados objetos mock para as classes TasksRepository e CacheRepository, que são usadas para acessar os dados de tarefa no banco de dados e no cache, respectivamente. Além disso, o método makeSut() é usado para criar uma instância da classe GetTasksUseCase com as classes TasksRepository e CacheRepository fornecidas como parâmetros.
+Os testes são executados com o uso da biblioteca Jest, que permite a criação de testes automatizados para JavaScript. O método beforeEach() é usado para restaurar todos os mocks antes de cada teste, para que cada teste seja executado com mocks limpos. O método beforeAll() é usado para abrir uma conexão com o banco de dados antes da execução dos testes, e o método afterAll() é usado para fechar a conexão com o banco de dados após a execução dos testes. */

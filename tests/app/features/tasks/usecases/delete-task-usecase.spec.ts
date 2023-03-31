@@ -53,3 +53,8 @@ describe("Delete task usecase teste", () => {
     expect(result).toBe(task.id);
   });
 });
+
+/* Este código é um conjunto de testes para a classe DeleteTaskUseCase que é responsável por deletar uma tarefa.
+
+O teste em questão foi marcado com .skip, o que significa que ele será ignorado ao rodar os testes. Essa linha comentada (jest.spyOn(TasksRepository.prototype, "get").mockResolvedValue(task.id);) indicava que um método get da classe TasksRepository seria espionado (monitorado) e seu retorno seria fixado em um valor específico, que é o id da tarefa. Porém, essa linha foi comentada e, portanto, não será executada.
+Esse teste espera que a função execute da classe DeleteTaskUseCase retorne o id da tarefa que foi deletada, mas esse comportamento não foi implementado na classe. */

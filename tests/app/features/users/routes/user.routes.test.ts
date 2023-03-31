@@ -36,7 +36,7 @@ describe("PUT - ", () => {
 });
 
 /* Este código contém um conjunto de testes para um endpoint "PUT" de uma API, que devem ser executados utilizando o framework Jest. O primeiro teste simula um cenário em que
- o usuário com o ID informado não existe na base de dados, o que deve resultar em um status code 404 e uma mensagem de erro informando que o usuário não existe. 
- O segundo teste verifica se a resposta da API contém um status code 200 e um objeto com a chave "data". Para executar os testes, é utilizado o framework Supertest para fazer
-  requisições à API. O método makeSut() cria uma instância do servidor express. Os testes também utilizam mocks para simular a chamada a métodos do repositório de usuários.
-   O código também importa as funções openConnection e closeConnection, que abrem e fecham uma conexão com o banco de dados. */
+o usuário com o ID informado não existe na base de dados, o que deve resultar em um status code 404 e uma mensagem de erro informando que o usuário não existe. 
+O segundo teste verifica se a resposta da API contém um status code 200 e um objeto com a chave "data". Para executar os testes, é utilizado o framework Supertest para fazer
+requisições à API. O método makeSut() cria uma instância do servidor express. Os testes também utilizam mocks para simular a chamada a métodos do repositório de usuários.
+O código também importa as funções openConnection e closeConnection, que abrem e fecham uma conexão com o banco de dados. */
